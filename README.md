@@ -17,12 +17,12 @@ A simple web app for working with audio: upload a file, get a transcript, view i
 
 ## Tech Stack
 
-**Frontend:** React (Vite), TypeScript, Tailwind
-**Backend:** FastAPI (Python)
-**Database:** PostgreSQL (SQLAlchemy + Alembic)
-**STT Model:** speech-to-text engine
-**PDF:** ReportLa
-**Other:** Docker, pytest
+ - **Frontend:** React (Vite), TypeScript, Tailwind
+ - **Backend:** FastAPI (Python)
+ - **Database:** PostgreSQL (SQLAlchemy)
+ - **STT Model:** speech-to-text engine
+ - *PDF:** ReportLa
+ - **Other:** Docker, pytest
 
 ---
 
@@ -84,12 +84,6 @@ poetry install
 poetry shell
 ```
 
-**DB migrations**
-
-```bash
-alembic upgrade head
-```
-
 **Run dev server**
 
 ```bash
@@ -115,29 +109,6 @@ Open the printed local URL (typically `http://localhost:5173`).
 
 ---
 
-## API (Draft)
-
-* `POST /api/transcriptions`
-
-  * Form-data: `file` (audio)
-  * Returns: `{ id, text, duration, language }`
-* `GET /api/transcriptions/{id}`
-
-  * Returns transcription details
-* `GET /api/transcriptions/{id}/download?format=pdf`
-
-  * Returns a PDF file
-* (Optional) `POST /api/separation`
-
-  * Input: audio file
-  * Returns: links to separated stems
-* (Optional) `POST /api/emotions`
-
-  * Input: `{ transcript: string }`
-  * Returns: `{ label: "aggressive" | "polite" | "passive", confidence }`
-
----
-
 ## How It Works (High-Level)
 
 1. User uploads audio from the React UI
@@ -150,13 +121,13 @@ Open the printed local URL (typically `http://localhost:5173`).
 
 ## Roadmap
 
-* [ ] **Frontend React UI**: upload, progress, transcript viewer (current focus)
-* [ ] File queue & background jobs (Celery/RQ)
-* [ ] Authentication (basic)
-* [ ] Multi-language detection
-* [ ] Batch processing & progress UI
-* [ ] Better PDF styling and watermark
-* [ ] Optional features (separation, emotion)
+* - **Frontend React UI**: upload, progress, transcript viewer (current focus)
+* - File queue & background jobs (Celery/RQ)
+* - Authentication (basic)
+* - Multi-language detection
+* - Batch processing & progress UI
+* - Better PDF styling and watermark
+* - Optional features (separation, emotion)
 
 ---
 
@@ -165,5 +136,3 @@ Open the printed local URL (typically `http://localhost:5173`).
 MIT (or update to your preferred license)
 
 ---
-
-> *This is a **university project** intended for educational purposes.*
