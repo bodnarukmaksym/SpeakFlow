@@ -133,6 +133,5 @@ Open the printed local URL (typically `http://localhost:5173`).
 
 ## License
 
-MIT (or update to your preferred license)
-
+MIT 
 ---
