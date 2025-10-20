@@ -9,7 +9,6 @@ import tsParser from "@typescript-eslint/parser";
 import globals from "globals";
 
 export default [
-  // 1) Глобальні ігнори
   {
     ignores: [
       "node_modules/**",
@@ -21,10 +20,8 @@ export default [
     ],
   },
 
-  // 2) Базові JS-рекомендації
   js.configs.recommended,
 
-  // 3) TS/TSX + React
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -47,11 +44,8 @@ export default [
       ...react.configs.recommended.rules,
       ...hooks.configs.recommended.rules,
 
-      // Vite/TS самі резолвлять імпорти
       "import/no-unresolved": "off",
-      // сучасний React
       "react/react-in-jsx-scope": "off",
-      // корисно для HMR
       "react-refresh/only-export-components": "warn",
     },
     settings: {
@@ -59,24 +53,20 @@ export default [
     },
   },
 
-  // 4) Cypress (e2e + component)
   {
     files: ["cypress/**/*.{ts,tsx,js,jsx}"],
     plugins: { cypress },
     languageOptions: {
-      // важливо: НЕ використовуємо cypress.environments.globals
       globals: {
-        ...globals.browser, // window, document
-        ...globals.node, // process і т.д. (часто треба у support файлах)
-        ...globals.mocha, // describe, it, before, after
+        ...globals.browser,
+        ...globals.node,
+        ...globals.mocha,
         cy: "readonly",
         Cypress: "readonly",
       },
     },
     rules: {
       ...cypress.configs.recommended.rules,
-      // якщо chai-асерти конфліктують із no-unused-expressions — розкоментуй:
-      // 'no-unused-expressions': 'off',
     },
   },
 ];
