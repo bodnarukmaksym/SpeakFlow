@@ -12,7 +12,8 @@
     "test:e2e": "cypress run --e2e",
     "test:e2e:headless": "cypress run --e2e --browser=chrome",
     "test:ct": "cypress run --component",
-    "test:ct:open": "cypress open --component"
+    "test:ct:open": "cypress open --component",
+    "test:e2e:ci": "start-server-and-test dev http://localhost:5173 'cypress run --e2e --browser=chrome'"
   },
   "lint-staged": {
     "app/**/*.{ts,tsx}": [
@@ -47,6 +48,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.5",
     "prettier": "^3.6.2",
+    "start-server-and-test": "^2.1.2",
     "typescript": "^5.9.3",
     "vite": "^7.1.11"
   },

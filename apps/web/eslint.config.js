@@ -31,6 +31,9 @@ export default [
         sourceType: "module",
         ecmaFeatures: { jsx: true },
       },
+      globals: {
+        ...globals.browser,
+      },
     },
     plugins: {
       "@typescript-eslint": tseslint,
