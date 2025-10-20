@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./app/globals.css";
-import RootLayout from "./app/layout";
-import Home from "./app/pages";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./globals.css";
+import RootLayout from "./layout";
+import Home from "./pages";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
     <RootLayout>
       <Home />
     </RootLayout>
-  </React.StrictMode>,
+  </StrictMode>,
 );
