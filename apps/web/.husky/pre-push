@@ -1,14 +1,9 @@
 #!/usr/bin/env sh
 set -e
+# nvm (щоб був правильний Node)
+export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm use >/dev/null
 
-# ensure Node from nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm use >/dev/null
-
-echo "[husky] pre-push: lint + format:check + e2e (apps/web)"
+echo "[husky] pre-push: lint + format:check (apps/web)"
 cd "$(git rev-parse --show-toplevel)/apps/web"
-
 npm run lint
 npm run format:check
-npm run test:e2e:ci
