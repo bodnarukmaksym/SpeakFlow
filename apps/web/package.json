@@ -24,6 +24,10 @@
       "eslint --fix",
       "prettier --write"
     ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
     "*.{js,jsx,css,md,json}": [
       "prettier --write"
     ]
