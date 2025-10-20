@@ -13,7 +13,7 @@
     "test:e2e:headless": "cypress run --e2e --browser=chrome",
     "test:ct": "cypress run --component",
     "test:ct:open": "cypress open --component",
-    "test:e2e:ci": "start-server-and-test dev http://localhost:5173 'cypress run --e2e --browser=chrome'"
+    "test:e2e:ci": "start-server-and-test \"dev -- --port 5173 --strictPort\" http://localhost:5173 \"cypress run --e2e --headless\""
   },
   "lint-staged": {
     "app/**/*.{ts,tsx}": [
