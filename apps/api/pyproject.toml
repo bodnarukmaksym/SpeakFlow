@@ -1,5 +1,5 @@
 [project]
-name = "api"
+name = "app"
 version = "0.1.0"
 description = "A simple web app for working with audio: upload a file, get a transcript, view it in the browser, and download it as a PDF. Built as a **university project** to explore modern web development and speech-to-text."
 authors = [
@@ -9,9 +9,22 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "sqlalchemy (>=2.0.44,<3.0.0)",
+    "pydantic (>=2.12.3,<3.0.0)",
+    "fastapi (>=0.119.0,<0.120.0)",
+    "alembic (>=1.17.0,<2.0.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.18.2"
+ruff = "^0.14.1"
+pylint = "^4.0.1"
+pytest = "^8.4.2"
+isort = "^7.0.0"
+pytest-cov = "^7.0.0"
+

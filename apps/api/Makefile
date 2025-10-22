@@ -31,9 +31,6 @@ check:
 	@echo "run pylint $(PYTHON_MODULES)"
 	@poetry run pylint $(PYTHON_MODULES) || true
 	@echo "------------------------------"
-	@echo "run flake8 $(PYTHON_MODULES)"
-	@poetry run flake8 $(PYTHON_MODULES) || true
-	@echo "------------------------------"
 	@echo "run mypy $(PYTHON_MODULES)"
 	@poetry run mypy $(PYTHON_MODULES) || true
 
