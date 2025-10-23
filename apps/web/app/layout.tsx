@@ -1,5 +1,6 @@
-import type { PropsWithChildren } from "react";
+import { ReactNode } from "react";
+import styles from "./styles/app.module.css";
 
-export default function RootLayout({ children }: PropsWithChildren) {
-  return <div id="layout">{children}</div>;
+export default function Layout({ children }: { children: ReactNode }) {
+  return <div className={styles.app}>{children}</div>;
 }
