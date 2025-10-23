@@ -1,6 +1,17 @@
 import styles from "../../../styles/TranscriptionResultPage.module.css";
+import * as React from "react";
+
+
 
 export function TranscriptionResultPage() {
+
+    const handleDownloadPdf = () => {
+    window.print();
+  };
+
+  const handleSaveToDrive = () => {
+    alert("Saving to Drive is not implemented yet.");
+  };
   return (
     <main className={styles.shell} aria-label="Transcription result">
       <div className={styles.topbar}>
@@ -65,11 +76,15 @@ export function TranscriptionResultPage() {
             <button
               className={`${styles.cta} ${styles.ctaPrimary}`}
               type="button"
-              disabled
+              onClick={handleDownloadPdf}
             >
               Download PDF
             </button>
-            <button className={styles.cta} type="button" disabled>
+            <button
+              className={styles.cta}
+              type="button"
+              onClick={handleSaveToDrive}
+            >
               Save Result to Drive
             </button>
             <a className={styles.cta} href="/main" role="button">
