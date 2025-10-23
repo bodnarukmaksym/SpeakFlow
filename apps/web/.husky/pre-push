@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 set -e
-# nvm (щоб був правильний Node)
 export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm use >/dev/null
 
 echo "[husky] pre-push: lint + format:check (apps/web)"
