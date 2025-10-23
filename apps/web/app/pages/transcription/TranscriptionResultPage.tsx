@@ -1,9 +1,8 @@
-import styles from "../../styles/TranscriptionResultPage.module.css";
+import styles from "../../../styles/TranscriptionResultPage.module.css";
 
 export function TranscriptionResultPage() {
   return (
     <main className={styles.shell} aria-label="Transcription result">
-      {/* Top bar */}
       <div className={styles.topbar}>
         <div className={styles.brandRow}>
           <div className={styles.logo} aria-hidden="true">
@@ -18,7 +17,6 @@ export function TranscriptionResultPage() {
         </div>
       </div>
 
-      {/* Card */}
       <section className={styles.board}>
         <div className={styles.card}>
           <header className={styles.cardHeader}>

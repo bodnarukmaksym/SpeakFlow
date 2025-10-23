@@ -1,13 +1,10 @@
 :root {
   --bar: #1a2343;
   --card: #eaf0f7;
-  --border: #9ec2ff;
   --text: #e9eefb;
   --card-text: #1f2937;
-  --muted: #5b657a;
   --blue: #3b82f6;
   --blue-700: #2563eb;
-  --r-xl: 18px;
 }
 
 .shell {
@@ -94,32 +91,18 @@
   color: #1b2b45;
 }
 
-.transcriptBox {
-  background: #f5f9ff;
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  padding: 18px 16px;
-  min-height: 160px;
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #1b2b45;
 }
 
-.pagination {
-  display: flex;
-  gap: 4px;
-  justify-content: center;
-  margin-top: 10px;
-}
-.pageBtn {
-  border: 1px solid #9ec2ff;
-  background: #edf5ff;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 12px;
-  color: #1f2b45;
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-.pageBtn:disabled {
-  cursor: not-allowed;
+.summaryText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--card-text);
+  margin: 0;
 }
 
 .actions {
@@ -142,6 +125,8 @@
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
+  font-size: 16px;
+  transition: background 0.2s ease;
 }
 .cta:hover {
   filter: brightness(0.98);
@@ -152,10 +137,6 @@
 }
 .ctaPrimary:hover {
   background: var(--blue-700);
-}
-.cta[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 .footerBadge {
@@ -176,5 +157,9 @@
   }
   .actions {
     gap: 10px;
+    flex-direction: column;
+  }
+  .cta {
+    width: 100%;
   }
 }

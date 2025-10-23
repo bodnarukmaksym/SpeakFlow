@@ -1,4 +1,4 @@
-import styles from "../../styles/AuthPage.module.css";
+import styles from "../../../styles/AuthPage.module.css";
 
 export function AuthPage() {
   return (
