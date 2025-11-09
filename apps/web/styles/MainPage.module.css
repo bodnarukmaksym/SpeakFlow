@@ -1,0 +1,285 @@
+:root {
+  --bg-outer: #0f1419;
+  --bg-main: #1e2a3a;
+  --bar: #1a2343;
+  --text: #e9eefb;
+  --muted: #b9c2d6;
+
+  --card: #eaf0f7;
+  --card-text: #1f2937;
+
+  --blue: #3b82f6;
+  --blue-700: #2563eb;
+  --green: #34d399;
+}
+
+.shell {
+  min-height: 100svh;
+  background: #0f1419;
+  color: var(--text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial;
+  padding-top: 56px;
+}
+
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 56px;
+  background: var(--bar);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 20px;
+}
+.logo {
+  width: 28px;
+  height: 28px;
+  background: #12204b;
+  color: #8fb1ff;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.logoSvg {
+  width: 18px;
+  height: 18px;
+}
+.brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.board {
+  width: min(1100px, 94vw);
+  margin: 56px auto 34px;
+  background: #1e2a3a;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.toolsCard {
+  background: var(--card);
+  color: var(--card-text);
+  border-radius: 10px;
+  padding: 26px 24px 28px;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+
+.title {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.toolsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 20px;
+  align-items: start;
+  text-align: center;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.toolInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toolItem {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  padding: 12px 14px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.05s ease;
+  background: #f8f9fa;
+}
+.toolItem:hover {
+  background: rgba(59, 130, 246, 0.06);
+  border-color: #93c5fd;
+}
+.toolInput:focus-visible + .toolItem {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+  outline-offset: 2px;
+}
+
+.toolInput:checked + .toolItem {
+  background: #dbeafe !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.toolInput:checked + .toolItem::after {
+  content: "✓";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.toolIcon {
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: var(--card-text);
+  stroke-width: 2.2;
+  transition: stroke 0.2s ease;
+}
+.toolLabel {
+  color: var(--blue);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+#tool-transcription:checked + .toolItem,
+#tool-summarizing:checked + .toolItem,
+#tool-mood:checked + .toolItem {
+  border-color: var(--blue);
+  background: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.selectedChip {
+  display: none;
+}
+
+.dropWrap {
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.fileInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.dropzone {
+  width: min(520px, 80%);
+  padding: 22px 18px;
+  border: 2px dashed #76a7ea;
+  border-radius: 10px;
+  text-align: center;
+  color: #4b5563;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.primaryBtn {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--blue);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition:
+    transform 0.05s ease,
+    background 0.2s ease;
+}
+.primaryBtn:hover {
+  background: var(--blue-700);
+}
+.primaryBtn:active {
+  transform: translateY(1px);
+}
+
+.featuresRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 22px;
+}
+.featureCol {
+  text-align: center;
+  padding: 8px 14px 10px;
+  color: var(--text);
+}
+.featureCol h3 {
+  margin: 0 0 6px;
+  font-weight: 800;
+  font-size: 18px;
+}
+.featureCol p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 14px;
+}
+.status {
+  font-weight: 700;
+  font-size: 14px;
+}
+.statusActive {
+  color: var(--green);
+}
+.statusWip {
+  color: var(--muted);
+}
+
+.footerBadge {
+  position: fixed;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #aab3c9;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+@media (max-width: 840px) {
+  .toolsRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .featuresRow {
+    grid-template-columns: 1fr;
+  }
+  .board {
+    padding: 20px;
+  }
+}

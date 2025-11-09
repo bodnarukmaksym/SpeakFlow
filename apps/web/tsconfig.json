@@ -10,5 +10,5 @@
     "skipLibCheck": true,
     "types": ["node", "cypress"]
   },
-  "include": ["app", "cypress", "vite.config.ts", "cypress.config.ts"]
+  "include": ["app", "cypress", "vite.config.ts", "cypress.config.ts", "types"],
 }
