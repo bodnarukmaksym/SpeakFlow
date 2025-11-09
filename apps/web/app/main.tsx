@@ -17,7 +17,7 @@ function App() {
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/transcription" replace />} />
+          <Route path="/" element={<Navigate to="/main" replace />} />
 
           <Route
             path="/auth"
